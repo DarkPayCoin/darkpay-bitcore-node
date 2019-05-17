@@ -4,27 +4,19 @@
   "author": "BitPay <dev@bitpay.com>",
   "version": "3.1.4",
   "main": "./index.js",
-  "repository": "git://github.com/darkpay/darkpay-bitcore-node.git",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/DarkPayCoin/darkpay-bitcore-node.git"
+  },
   "homepage": "https://github.com/DarkPayCoin/darkpay-bitcore-node",
   "bugs": {
     "url": "https://github.com/DarkPayCoin/darkpay-bitcore-node/issues"
   },
   "contributors": [
-    {
-      "name": "Christopher Jeffrey"
-    },
-    {
-      "name": "Braydon Fuller",
-      "email": "braydon@bitpay.com"
-    },
-    {
-      "name": "Chris Kleeschulte",
-      "email": "chrisk@bitpay.com"
-    },
-    {
-      "name": "Patrick Nagurny",
-      "email": "patrick@bitpay.com"
-    }
+    "Christopher Jeffrey",
+    "Braydon Fuller <braydon@bitpay.com>",
+    "Chris Kleeschulte <chrisk@bitpay.com>",
+    "Patrick Nagurny <patrick@bitpay.com>"
   ],
   "bin": {
     "bitcore-node": "./bin/bitcore-node",
@@ -37,7 +29,7 @@
     "regtest": "./scripts/regtest",
     "jshint": "jshint --reporter=node_modules/jshint-stylish ./lib",
     "coverage": "istanbul cover _mocha -- --recursive",
-    "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- --recursive -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "tags": [
     "bitcoin",
@@ -46,20 +38,23 @@
   "dependencies": {
     "async": "^1.5.2",
     "body-parser": "^1.13.3",
+    "bufferutil": "~1.2.1",
     "colors": "^1.1.2",
     "commander": "^2.8.1",
+    "darkpay-bitcoind-rpc": "git://github.com/DarkPayCoin/darkpay-bitcoind-rpc.git",
+    "darkpay-bitcore-lib": "git://github.com/DarkPayCoin/darkpay-bitcore-lib.git",
     "errno": "^0.1.4",
     "escape-html": "^1.0.3",
     "express": "^4.13.3",
     "liftoff": "^2.3.0",
     "lru-cache": "^4.0.1",
     "mkdirp": "0.5.0",
-    "darkpay-bitcoind-rpc": "git://github.com/darkpay/darkpay-bitcoind-rpc",
-    "darkpay-bitcore-lib": "git://github.com/darkpay/darkpay-bitcore-lib",
+    "pakmanager": "^0.12.1",
     "path-is-absolute": "^1.0.0",
     "semver": "^5.0.1",
     "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5",
+    "utf-8-validate": "~1.2.1",
     "zmq": "^2.14.0"
   },
   "optionalDependencies": {
@@ -79,5 +74,13 @@
     "rimraf": "^2.4.2",
     "sinon": "^1.15.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "keywords": [
+    "darkpay",
+    "crypto"
+  ]
 }
